@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build && parcel client/index.html",
-    "build": "npm run clean && parcel build client/index.html",
+    "start": "npm run clean && parcel build client/index.html",
+    "dev": "npm run start && parcel client/index.html",
     "clean": "rm -rf dist .cache",
     "test": "jest"
   },
@@ -23,16 +23,13 @@
     "@testing-library/react": "^9.5.0",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
-    "jest-prop-type-error": "^1.1.0",
     "parcel-bundler": "^1.12.4",
     "redux-devtools-extension": "^2.13.8"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "react-dom": "^16.13.0"
   },
   "babel": {
     "presets": [
@@ -43,8 +40,7 @@
   "jest": {
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
-      "@testing-library/jest-dom",
-      "jest-prop-type-error"
+      "@testing-library/jest-dom"
     ]
   }
 }

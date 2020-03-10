@@ -1,34 +1,37 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import Nav from './Nav';
-import Home from './Home';
-import Game from './Game';
-import { HOME, GAME } from './actions';
-
-const viewSelector = (state = {}) => state.view;
-
-const getViewComponent = (view) => {
-    switch (view) {
-        case HOME:
-            return <Home/>
-        case GAME:
-            return <Game/>
-        default:
-            return <Home/>;
-    }
-};
+import React, { useState } from 'react';
+import Home from './components/Home';
+import Game from './components/Game';
+import { HOME, GAME } from './consts';
+import './styles.css';
 
 const App = () => {
-    const view = useSelector(viewSelector);
+    const [ view, setView ] = useState(HOME);
+    const [ player1, setPlayer1 ] = useState('');
+    const [ player2, setPlayer2 ] = useState('');
+
+    const getViewComponent = (view) => {
+        switch (view) {
+            case HOME:
+                return <Home
+                        setView={setView}
+                        setPlayer1={setPlayer1}
+                        setPlayer2={setPlayer2}/>
+            case GAME:
+                return <Game
+                        setView={setView}
+                        player1={player1}
+                        player2={player2}/>
+            default:
+                return <Home
+                        setView={setView}
+                        setPlayer1={setPlayer1}
+                        setPlayer2={setPlayer2}/>
+        }
+    };
     return (
-        <>
-            <header>
-                <Nav/>
-            </header>
-            <main>
+            <div className="app">
                 {getViewComponent(view)}
-            </main>
-        </>
+            </div>
     )
 };
 

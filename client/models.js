@@ -2,10 +2,26 @@ export class Player {
     constructor(name) {
         this.name = name;
         this.deck = [];
+        this.downStack = [];
     }
 
     addCardToDeck(card) {
         this.deck.push(card);
+    }
+
+    playCard() {
+        return this.deck.pop();
+    }
+
+    addCardsToDownStack(cards) {
+        this.downStack = [...this.downStack, ...cards];
+    }
+}
+
+export class WarCardPair {
+    constructor(activeCard, downCard) {
+        this.activeCard = activeCard;
+        this.downCard = downCard;
     }
 }
 
@@ -21,6 +37,10 @@ export class Deck {
         this.numberOfSuits = numberOfSuits;
         this.numberOfRanks = numberOfRanks;
         this.deck = [];
+    }
+
+    get length() {  // writing deck.deck.length can be confusing
+        return this.deck.length;
     }
 
     create() {
@@ -46,7 +66,13 @@ export class Deck {
         }
     }
 
-    deal(player) {
-        player.addCardToDeck(this.deck.pop());
+    dealCard() {
+        return this.deck.pop();
+    }
+
+    makeEven() {
+        if (this.deck.length % 2 !== 0) {
+            this.deck.pop();
+        }
     }
 }

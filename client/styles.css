@@ -1,0 +1,103 @@
+html, body, main {
+    height: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Georgia', serif;;
+    font-weight: bold;
+}
+
+.app {
+    background: white;
+    height: 100%;
+}
+
+/* HOME */
+.home {
+    text-align: center;
+}
+
+.create-players-form > div > input {
+    margin: 1em 0.5em;
+    height: 1.5em;
+}
+
+/* GAME */
+.game-over {
+    text-align: center;
+    margin-top: 40vh;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 1em;
+    height: 100vh;
+}
+
+.title {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+}
+
+.game > div {
+    padding: 1em;
+    text-align: center;
+}
+
+.active-button {
+    grid-column: 1/4;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+button {
+    background-color: #4b77be;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    border: none;
+}
+
+button:hover {
+    background-color: #3c5f98;
+    cursor: pointer;
+}
+
+.card-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    display: inline-block;
+    height: 12em;
+    width: 8em;
+    padding: 1em;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* WAR */
+.war {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.war__player2Cards {
+    justify-content: end;
+}
+
+.war__action-button {
+    grid-column: 1/-1;
+}
