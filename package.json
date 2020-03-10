@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && parcel src/index.html",
+    "start": "npm run build && parcel src/index.html --public-url ./",
     "build": "npm run clean && parcel build src/index.html",
     "clean": "rm -rf dist .cache",
     "test": "jest"
