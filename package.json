@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && parcel client/index.html",
-    "build": "npm run clean && parcel build client/index.html",
+    "start": "NODE_ENV=production parcel build dist/index.html --public-url ./",
+    "dev": "NODE_ENV=development npm run build && parcel src/index.html",
+    "build": "npm run clean && parcel build src/index.html",
     "clean": "rm -rf dist .cache",
     "test": "jest"
   },
