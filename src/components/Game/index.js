@@ -5,6 +5,7 @@ import War from './War';
 import Card from './Card';
 import { INACTIVE, ACTIVE, SETTLE, REQUEST, HOME } from '../../consts';
 
+// center play area
 const CardArea = ({ player1Card, player2Card, winner }) => (
     <div className="card-area">
         <Card suit={player1Card.suit} rank={player1Card.rank}/>
@@ -39,6 +40,7 @@ const dealCards = (player1, player2, deck) => {
     }
 };
 
+// player sidebars
 const PlayerArea = ({ player }) => (
     <div>
         <h3>{player.name}</h3>
@@ -77,7 +79,7 @@ const Game = ({
         if (gameStarted) {
             if (player1Card.rank === player2Card.rank) {
                 setWinner('');
-                setWarStatus(REQUEST);
+                setWarStatus(REQUEST);  // user consent before war begins
             } else if (player1Card.rank > player2Card.rank) {
                 player1.addCardsToDownStack([player1Card, player2Card]);
                 setWinner(player1.name);

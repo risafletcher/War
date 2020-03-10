@@ -26,15 +26,17 @@ const Home = ({
                     <input
                         type="text"
                         name="player1name"
+                        id="player1name"
                         onChange={({ target }) => setPlayer1Name(target.value)}
                         required
                     />
                 </div>
                 <div>
-                    <label htmlFor="player1name">Player 1 Name:</label>
+                    <label htmlFor="player2name">Player 2 Name:</label>
                     <input
                         type="text"
-                        name="player1name"
+                        name="player2name"
+                        id="player2name"
                         onChange={({ target }) => setPlayer2Name(target.value)}
                         required
                     />
